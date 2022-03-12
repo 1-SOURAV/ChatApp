@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screens.LoginScreen">
+
+    <ImageView
+        android:id="@+id/friendsIv"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/friends"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mobileTv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/moblile"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/mine"
+        android:hint="@string/mobile"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:padding="15dp"
+        android:textColor="@color/headings"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/friendsIv"
+        tools:ignore="UnusedAttribute" />
+
+
+    <EditText
+        android:id="@+id/passwordTv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/mine"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColor="@color/headings"
+        app:layout_constraintTop_toBottomOf="@id/mobileTv1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="TextFields,UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/forgotPasswordTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTv1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="40dp"
+        android:textSize="16sp"
+        android:textColor="@color/mine"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/lemonada"
+        android:padding="15dp"
+        android:text="@string/login1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/orTv"/>
+
+    <TextView
+        android:id="@+id/orTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/loginWithGoogleBtn"
+        android:text="@string/or"
+        android:layout_margin="10dp"
+        android:textSize="22sp"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginWithGoogleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/google"
+        android:drawablePadding="10dp"
+        android:background="@drawable/google_btn_bg"
+        android:fontFamily="@font/lemonada"
+        android:padding="15dp"
+        android:text="@string/login_with_google"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/SignUpTv"/>
+
+    <LinearLayout
+        android:id="@+id/SignUpTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/atma_medium"
+            android:text="@string/new_to_sandesh"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/signUpTv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/atma_medium"
+            android:text="@string/sign_up"
+            android:textAlignment="textStart"
+            android:textColor="@color/mine"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

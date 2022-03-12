@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="welcome_msg">Welcome to Sandesh</string>
+    <string name="get_started">Get Started</string>
+    <string name="login">Login ?</string>
+    <string name="welcome_msg1">Happiness is \nChatting and Wasting time together 🙃</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="joined_us_before">Joined us before ?</string>
+    <string name="login1">Login</string>
+    <string name="new_to_sandesh">New to Sandesh?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">OR</string>
+    <string name="login_with_google">Login with Google</string>
 </resources>
