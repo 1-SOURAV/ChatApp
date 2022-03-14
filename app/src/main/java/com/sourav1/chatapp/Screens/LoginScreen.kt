@@ -16,7 +16,7 @@ class LoginScreen : AppCompatActivity() {
     private lateinit var loginWithGoogleBtn: Button
     private lateinit var forgotPasswordTv: TextView
 
-    private lateinit var mobile: String
+    private lateinit var email: String
     private lateinit var password: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class LoginScreen : AppCompatActivity() {
         loginWithGoogleBtn = binding.loginWithGoogleBtn
         forgotPasswordTv = binding.forgotPasswordTv
 
-        mobile = binding.mobileTv1.text.toString()
+        email = binding.emailTv1.text.toString()
         password = binding.passwordTv1.text.toString()
 
         signUpTv.setOnClickListener {
@@ -40,7 +40,7 @@ class LoginScreen : AppCompatActivity() {
         }
 
         loginBtn.setOnClickListener {
-            loginUser(mobile, password)
+            loginUser(email, password)
         }
 
         loginWithGoogleBtn.setOnClickListener {

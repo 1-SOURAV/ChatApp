@@ -47,17 +47,17 @@
         tools:ignore="UnusedAttribute" />
 
     <EditText
-        android:id="@+id/mobileTv"
+        android:id="@+id/emailTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/moblile"
+        android:drawableStart="@drawable/email"
         android:drawablePadding="20dp"
         android:drawableTint="@color/mine"
-        android:hint="@string/mobile"
+        android:hint="@string/email"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         android:textColor="@color/headings"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -79,7 +79,7 @@
         android:textColor="@color/headings"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mobileTv"
+        app:layout_constraintTop_toBottomOf="@id/emailTv"
         tools:ignore="UnusedAttribute" />
 
 

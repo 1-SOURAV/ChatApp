@@ -17,15 +17,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/mobileTv1"
+        android:id="@+id/emailTv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/moblile"
+        android:drawableStart="@drawable/email"
         android:drawablePadding="20dp"
         android:drawableTint="@color/mine"
-        android:hint="@string/mobile"
+        android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="number"
         android:padding="15dp"
@@ -49,7 +49,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:textColor="@color/headings"
-        app:layout_constraintTop_toBottomOf="@id/mobileTv1"
+        app:layout_constraintTop_toBottomOf="@id/emailTv1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="TextFields,UnusedAttribute" />
