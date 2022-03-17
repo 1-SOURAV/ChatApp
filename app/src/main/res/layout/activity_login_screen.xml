@@ -14,7 +14,8 @@
         android:src="@drawable/friends"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/emailTv1"
@@ -27,7 +28,7 @@
         android:drawableTint="@color/mine"
         android:hint="@string/email"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textColor="@color/headings"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -46,6 +47,7 @@
         android:drawablePadding="20dp"
         android:drawableTint="@color/mine"
         android:hint="@string/password"
+        android:maxLines="1"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:textColor="@color/headings"

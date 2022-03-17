@@ -11,7 +11,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.sourav1.chatapp.databinding.ActivitySignUpScreenBinding
 
 
@@ -30,7 +32,8 @@ class SignUpScreen : AppCompatActivity() {
     private lateinit var email: String
     private lateinit var password: String
 
-    private lateinit var auth: FirebaseAuth
+    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var mDb: DatabaseReference
     private lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,13 +42,14 @@ class SignUpScreen : AppCompatActivity() {
         setContentView(binding.root)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        auth = FirebaseAuth.getInstance()
+
+        mDb = FirebaseDatabase.getInstance().getReference("ChatApp/Users")
 
         loginBtn = binding.loginTv1
         signUpBtn = binding.signUpBtn
 
         fullNameTv = binding.fullNameTv
-        passwordTv = binding.fullNameTv
+        passwordTv = binding.passwordTv
         emailTv = binding.emailTv
 
         progressDialog = ProgressDialog(this)
@@ -95,10 +99,16 @@ class SignUpScreen : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 progressDialog.dismiss()
                 if (task.isSuccessful) {
+                    val uid = auth.currentUser?.uid
+                    val ref = mDb.child(uid!!)
+
+                    val mp: MutableMap<String, String> = mutableMapOf()
+                    mp["Name"] = fullName
+
+                    ref.setValue(mp)
                     //Sign In Successfully, Update UI
                     Log.d("Email Auth:", "User created with email: Success")
-                    val user = auth.currentUser
-                    goToDashboard(user)
+                    goToDashboard()
                 } else {
                     Toast.makeText(
                         this,
@@ -109,7 +119,7 @@ class SignUpScreen : AppCompatActivity() {
             }
     }
 
-    private fun goToDashboard(user: FirebaseUser?) {
+    private fun goToDashboard() {
         val intent = Intent(this, Dashboard::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)

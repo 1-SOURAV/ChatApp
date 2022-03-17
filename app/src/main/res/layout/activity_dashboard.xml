@@ -7,24 +7,18 @@
     tools:context=".Screens.Dashboard">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv"
+        android:id="@+id/userName"
+        android:textSize="18sp"
+        android:textColor="@color/headings"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="20dp"
         tools:text="Sample text"
         android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
-    <Button
-        android:layout_margin="20dp"
-        android:padding="1dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/btn"
-        android:text="Click to logout"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
