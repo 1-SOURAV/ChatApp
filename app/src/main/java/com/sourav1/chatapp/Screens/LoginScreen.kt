@@ -69,7 +69,7 @@ class LoginScreen : AppCompatActivity() {
     }
 
     private fun loginWithGoogle() {
-        
+
     }
 
     private fun loginUser() {

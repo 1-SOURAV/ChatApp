@@ -12,6 +12,7 @@
         android:theme="@style/Theme.ChatApp">
         <activity
             android:name=".Screens.Dashboard"
+            android:label=""
             android:exported="false" />
         <activity
             android:name=".Screens.LoginScreen"
@@ -19,12 +20,7 @@
         <activity
             android:name=".Screens.SignUpScreen"
             android:exported="false" />
-        <activity
-            android:name=".Screens.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Screens.WelcomeScreen"
-            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

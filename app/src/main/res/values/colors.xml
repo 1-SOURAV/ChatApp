@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="headings">#393737</color>
-    <color name="mine">#a100ff</color>
+    <color name="mine">#004b23</color>
+    <color name="myGreen">#38b000</color>
 </resources>
