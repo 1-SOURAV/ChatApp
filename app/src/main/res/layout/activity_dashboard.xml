@@ -19,8 +19,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:elevation="12dp"
             android:background="?attr/colorPrimary"
+            android:elevation="12dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <com.google.android.material.tabs.TabLayout
@@ -30,7 +30,9 @@
             android:elevation="12dp"
             app:tabBackground="@color/myGreen"
             app:tabGravity="fill"
+            app:tabIndicatorColor="#ccff33"
             app:tabMode="fixed"
+            app:tabSelectedTextColor="#ccff33"
             app:tabTextColor="@color/headings" />
 
     </com.google.android.material.appbar.AppBarLayout>

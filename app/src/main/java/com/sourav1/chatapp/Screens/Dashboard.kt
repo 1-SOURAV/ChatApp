@@ -79,7 +79,7 @@ class Dashboard : AppCompatActivity() {
         finish()
     }
 
-    private fun loadUser(){
+    private fun loadUser() {
         mDb.child(uid!!).child("Name").get().addOnSuccessListener {
             val key = it.key.toString()
             val value = it.value.toString()
