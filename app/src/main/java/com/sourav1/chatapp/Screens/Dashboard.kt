@@ -23,6 +23,7 @@ import com.sourav1.chatapp.databinding.ActivityDashboardBinding
 class Dashboard : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
+
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private var mDb: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("ChatApp/Users")

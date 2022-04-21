@@ -1,5 +1,6 @@
 package com.sourav1.chatapp.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,6 +51,7 @@ class ChatRvAdapter(
     }
 
     override fun getItemCount(): Int {
+        Log.d("Checking: ", "${userList.size}")
         return userList.size
     }
 
