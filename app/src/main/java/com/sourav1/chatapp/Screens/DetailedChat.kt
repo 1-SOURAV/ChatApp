@@ -1,13 +1,8 @@
 package com.sourav1.chatapp.Screens
 
-import android.annotation.SuppressLint
-import android.app.PendingIntent.getActivity
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.sourav1.chatapp.Data.Users
-import com.sourav1.chatapp.FragmentScreen.ChatsScreen
 import com.sourav1.chatapp.R
 import com.sourav1.chatapp.databinding.ActivityDetailedChatBinding
 
@@ -15,16 +10,14 @@ class DetailedChat : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailedChatBinding
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailedChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val usersList = intent.getParcelableArrayListExtra<Users>("USERS")
-        val pos = intent.getStringExtra("POSITION").toString().toInt()
-        val currUser = usersList?.get(pos)
+    }
 
+    private fun setUpSupportActionBar(currUser: Users?) {
         setSupportActionBar(binding.toolbar1)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

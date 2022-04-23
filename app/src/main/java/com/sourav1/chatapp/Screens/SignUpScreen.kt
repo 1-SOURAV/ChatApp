@@ -104,7 +104,7 @@ class SignUpScreen : AppCompatActivity() {
 
                     val mp: MutableMap<String, String> = mutableMapOf()
                     mp["Name"] = fullName
-
+                    mp["Uid"] = auth.currentUser?.uid.toString()
                     ref.setValue(mp)
                     //Sign In Successfully, Update UI
                     Log.d("Email Auth:", "User created with email: Success")

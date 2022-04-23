@@ -29,18 +29,6 @@
                 app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-<!--            <ImageButton-->
-<!--                android:id="@+id/toolbar1BackBtn"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:backgroundTint="@color/myGreen"-->
-<!--                android:contentDescription="back"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:src="@drawable/ic_baseline_arrow_back_24"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/toolbar1"-->
-<!--                app:layout_constraintLeft_toLeftOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
 
             <TextView
                 android:id="@+id/toolbar1UserName"
@@ -78,26 +66,36 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detailedChatRv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout1"
+        app:layout_constraintBottom_toTopOf="@id/msgEt"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/cdview1"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout1" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdview1"
-        android:layout_width="match_parent"
-        android:layout_margin="12dp"
-        android:layout_height="50dp"
+    <EditText
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/msgEt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:backgroundTint="@color/black">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sendBtn"
+        tools:text="Hello g kaise ho" />
 
-
-    </androidx.cardview.widget.CardView>
+    <ImageButton
+        android:layout_marginRight="10dp"
+        android:id="@+id/sendBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_send_24"
+        app:layout_constraintBottom_toBottomOf="@id/msgEt"
+        app:layout_constraintLeft_toRightOf="@id/msgEt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/msgEt"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
