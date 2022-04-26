@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/user_image"
+            android:scaleType="centerCrop"
             android:src="@drawable/person" />
 
     </androidx.cardview.widget.CardView>
@@ -30,24 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/roundCardView"
         app:layout_constraintLeft_toRightOf="@id/roundCardView"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/roundCardView"
         tools:text="Sourav Sharma" />
 
-
-    <TextView
-        android:id="@+id/lastMsg"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:textColor="#8E8E8E"
-        android:textSize="14sp"
-        app:layout_constraintLeft_toRightOf="@id/roundCardView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userName"
-        app:layout_constraintBottom_toBottomOf="@id/roundCardView"
-        tools:text="This is last message" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

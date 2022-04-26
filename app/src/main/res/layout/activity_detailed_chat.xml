@@ -34,9 +34,9 @@
                 android:id="@+id/toolbar1UserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                tools:text="Username"
                 android:layout_marginStart="12dp"
                 android:fontFamily="@font/lemonada"
-                android:text="Username"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/welcome_img" />
+                    android:src="@drawable/person" />
             </androidx.cardview.widget.CardView>
 
 
@@ -73,13 +73,14 @@
         app:layout_constraintBottom_toTopOf="@id/msgEt"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout1"
+        tools:listitem="@layout/chat_item" />
 
     <EditText
-        android:layout_marginHorizontal="10dp"
         android:id="@+id/msgEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -87,15 +88,15 @@
         tools:text="Hello g kaise ho" />
 
     <ImageButton
-        android:layout_marginRight="10dp"
         android:id="@+id/sendBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/ic_baseline_send_24"
         app:layout_constraintBottom_toBottomOf="@id/msgEt"
         app:layout_constraintLeft_toRightOf="@id/msgEt"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/msgEt"/>
+        app:layout_constraintTop_toTopOf="@id/msgEt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

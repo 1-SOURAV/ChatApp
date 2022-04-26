@@ -11,8 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import com.sourav1.chatapp.Adapter.ViewPagerAdapter
 import com.sourav1.chatapp.FragmentScreen.ChatsScreen
 import com.sourav1.chatapp.FragmentScreen.ProfileScreen
@@ -24,9 +23,8 @@ class Dashboard : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
 
-    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
-    private var mDb: DatabaseReference =
-        FirebaseDatabase.getInstance().getReference("ChatApp/Users")
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val mDb: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private val uid = auth.currentUser?.uid
     private val mp: MutableMap<String, String> = mutableMapOf()
@@ -81,14 +79,18 @@ class Dashboard : AppCompatActivity() {
     }
 
     private fun loadUser() {
-        mDb.child(uid!!).child("Name").get().addOnSuccessListener {
-            val key = it.key.toString()
-            val value = it.value.toString()
-            Log.d("check: ", "$key : $value")
-            mp[key] = value
-        }.addOnCompleteListener {
-            val fullName = mp["Name"].toString()
-            title = fullName
+        val ref = mDb.collection("Users").document("Data").collection("PersonalInfo")
+            .document(uid!!)
+
+        ref.get().addOnSuccessListener { document ->
+            if (document != null) {
+                val userMap = document.data as MutableMap<*, *>
+                val username = userMap["Name"]
+                bar.title = username.toString()
+            }
         }
+            .addOnFailureListener {
+                Log.d("Check: ", it.message.toString())
+            }
     }
 }
