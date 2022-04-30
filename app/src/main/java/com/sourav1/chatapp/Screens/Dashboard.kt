@@ -49,7 +49,7 @@ class Dashboard : AppCompatActivity() {
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(ChatsScreen(), "Chats")
-        adapter.addFragment(UsersScreen(), "Users")
+//        adapter.addFragment(UsersScreen(), "Users")
         adapter.addFragment(ProfileScreen(), "Profile")
 
         pager.adapter = adapter

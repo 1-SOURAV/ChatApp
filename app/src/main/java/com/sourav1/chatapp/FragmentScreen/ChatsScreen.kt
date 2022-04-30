@@ -6,13 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
-import com.google.firebase.storage.FirebaseStorage
 import com.sourav1.chatapp.Adapter.ChatRvAdapter
 import com.sourav1.chatapp.Data.Users
 import com.sourav1.chatapp.Screens.DetailedChat
@@ -51,7 +48,7 @@ class ChatsScreen : Fragment(), ChatRvAdapter.OnItemClickListener {
                 return@addSnapshotListener
             }
 
-
+            binding.progressBar1.visibility = View.VISIBLE
             for (doc in value!!) {
                 val user = doc.data as MutableMap<*, *>
                 Log.d("Checking: ", user["UserImg"].toString())
@@ -59,10 +56,11 @@ class ChatsScreen : Fragment(), ChatRvAdapter.OnItemClickListener {
                 val uid = user["Uid"].toString()
                 val name = user["Name"].toString()
 
-                if(uid == auth.currentUser?.uid)
+                if (uid == auth.currentUser?.uid)
                     continue
                 userList.add(Users(name, uid))
             }
+            binding.progressBar1.visibility = View.INVISIBLE
 
             binding.chatRv.layoutManager = LinearLayoutManager(context)
             binding.chatRv.adapter = adapter
